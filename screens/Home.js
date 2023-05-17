@@ -25,7 +25,11 @@ export default class Home extends Component {
           publication: data.publication,
           reading_time: data.reading_time
         })
+      }).catch((e) => {
+        console.error(e)
       })
+    }).catch((e) => {
+      console.error(e)
     })
   }
   like() {
@@ -59,9 +63,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   title: {
+    marginTop: "20vh",
     color: "#ffffff",
     fontSize: "4vw"
   },
@@ -100,16 +105,20 @@ const styles = StyleSheet.create({
   voting: {
     marginTop: "auto",
     display: "flex",
-    flexDirection: "row"
+    flexDirection: "row",
+    gap: "10vw",
+    marginBottom: "10vh",
   },
   like: {
-    width: "50vw",
-    height: "40vh",
-    backgroundColor: "#0eb32c"
+    width: "10vw",
+    height: "10vw",
+    backgroundColor: "#0eb32c",
+    borderRadius: "1rem"
   },
   dislike: {
-    width: "50vw",
-    height: "40vh",
-    backgroundColor: "#b83211"
+    width: "10vw",
+    height: "10vw",
+    backgroundColor: "#b83211",
+    borderRadius: "1rem"
   }
 })

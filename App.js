@@ -4,6 +4,7 @@ import { View, StyleSheet } from "react-native";
 import Home from "./screens/Home";
 import Popular from "./screens/Popular";
 import Recommendation from "./screens/Recommendation";
+import Nav from "./components/Nav";
 
 export default class App extends Component {
   constructor(props) {
@@ -33,6 +34,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <this.state.screen {...this.state} />
+        <Nav switchToHome={() => this.switchToHome()} switchToPopular={() => this.switchToPopular()} switchToRecommendation={() => this.switchToRecommendation()} />
       </View>
     );
   }
